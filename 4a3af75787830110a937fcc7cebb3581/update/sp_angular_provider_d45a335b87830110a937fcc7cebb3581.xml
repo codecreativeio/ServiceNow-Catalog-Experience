@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_angular_provider">
+    <sp_angular_provider action="INSERT_OR_UPDATE">
+        <name>CatalogItemNavigator</name>
+        <script><![CDATA[function CatalogItemNavigator($http, $timeout) {
+	var States = {
+		'Initial': 'Initial',
+		'Loading': 'Loading',
+		'Loaded': 'Loaded'
+	};
+	
+	var sections = [];
+	var selectedIndex;
+	var state = States.Initial;
+	var g_form;
+	
+	function selectInitialSection() {
+		selectedIndex = 0;
+		selectSection(sections[0]);
+	}
+	
+	function load(catItemId, gForm) {
+		if (state == States.Initial) {
+			state = States.Loading;
+			g_form = gForm;
+			
+			$http.get('/api/x_0505_cc_sc_tools/codecreative_catalog_toolkit/getCatItemSections?catItemId=' + catItemId)
+			.then(function(res) {
+				sections = res.data.result.sections;
+				state = States.Loaded;
+				selectInitialSection();
+			});
+		}
+	}
+	
+	function setContainerVisible(key, value) {
+		var field = g_form.getField(key);
+		field._visible = value;
+	}
+	
+	function setSectionVisibility(section, isSelected) {		
+		if (section.containers) {
+			section.containers.forEach(function(key) {
+				setContainerVisible(key, isSelected);
+			});
+		}
+		else {
+			setContainerVisible(section.key, isSelected);
+		}
+	}
+	
+	function selectSection(selected) {
+		sections.forEach(function(section, ix) {
+			var isSelected = selected.key == section.key;
+			section.isSelected = isSelected;
+			setSectionVisibility(section, isSelected);
+			
+			if (isSelected) {
+				selectedIndex = ix;
+			}
+		});
+	}
+	
+	function showAll() {
+		sections.forEach(function(section) {
+			setSectionVisibility(section, true);
+			section.isSelected = false;
+			selectedIndex = null;
+		});
+	}
+	
+	function submit() {
+		$timeout(function() {
+			$("[name='submit']").trigger('click');
+		});
+	}
+	
+	function hasNext() {
+		return selectedIndex < sections.length - 1;
+	}
+	
+	function next() {
+		if (hasNext()) {
+			selectSection(sections[selectedIndex + 1]);
+		}
+	}
+	
+	function hasPrevious() {
+		return selectedIndex > 0;
+	}
+	
+	function previous() {
+		if (hasPrevious()) {
+			selectSection(sections[selectedIndex - 1]);
+		}
+	}
+	
+	function getSections() {
+		return sections;
+	}
+	
+	function getState() {
+		return state;
+	}
+	
+	function getCurrentSelectedIndex() {
+		return selectedIndex;
+	}
+	
+	return {
+		'load': load,
+		'selectSection': selectSection,
+		'showAll': showAll,
+		'submit': submit,
+		'hasNext': hasNext,
+		'next': next,
+		'hasPrevious': hasPrevious,
+		'previous': previous,
+		'getSections': getSections,
+		'getState': getState,
+		'getCurrentSelectedIndex': getCurrentSelectedIndex
+	};
+}]]></script>
+        <sys_class_name>sp_angular_provider</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-29 19:31:37</sys_created_on>
+        <sys_id>d45a335b87830110a937fcc7cebb3581</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_name>CatalogItemNavigator</sys_name>
+        <sys_package display_value="CodeCreative Catalog Experience" source="x_0505_cc_sc_tools">4a3af75787830110a937fcc7cebb3581</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeCreative Catalog Experience">4a3af75787830110a937fcc7cebb3581</sys_scope>
+        <sys_update_name>sp_angular_provider_d45a335b87830110a937fcc7cebb3581</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-05-03 18:35:53</sys_updated_on>
+        <type>service</type>
+    </sp_angular_provider>
+</record_update>

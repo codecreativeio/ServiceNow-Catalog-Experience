@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($rootScope, CatalogItemNavigator) {
+  /* widget controller */
+  var c = this;
+	
+	c.nav = CatalogItemNavigator;
+	
+	$rootScope.$on('spModel.gForm.initialized', function(e, gFormInstance) {
+		CatalogItemNavigator.load(c.data.catItemId, gFormInstance);
+	});
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>$cc-scitem-section-unselectedColor: #ddd;
+$cc-scitem-selectedColor: $brand-primary;
+
+ul {
+ list-style-type: none; 
+  padding: 0;
+}
+
+li {
+	margin-bottom: 2.5rem;
+  position: relative;
+}
+
+li.cc-section::after {
+  content: "";
+  position: absolute;
+  width: .5rem;
+  background-color: $cc-scitem-section-unselectedColor;
+  height: 2.6rem;
+  bottom: -2.5rem;
+  left: 1rem;
+}
+
+li.cc-section.cc-last::after {
+	 display: none;
+}
+
+li:last-of-type {
+  margin-bottom: 0;
+}
+
+li &gt; a {
+	display: block;
+  font-size: 1.75rem;
+  color: $text-color;
+}
+
+li &gt; a:hover .cc-scitem-section-step-number, 
+li &gt; a:focus .cc-scitem-section-step-number {
+	border: 1px solid $cc-scitem-selectedColor;
+}
+
+.cc-scitem-section-step-number {
+  display: inline-block;
+	width: 2.5rem;
+  height: 2.5rem;
+  color: #fff;
+  background-color: $cc-scitem-section-unselectedColor;
+  margin-right: 1.25rem;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+li.cc-scitem-section-showall &gt; a {
+	text-align: right;
+  font-size: 1.5rem;
+}
+
+.cc-selected {
+  font-weight: bold; 
+  
+  .cc-scitem-section-step-number {
+  	background-color: $cc-scitem-selectedColor;
+    border-color: $cc-scitem-selectedColor;
+  }
+}
+
+li.cc-section.cc-selected::after {
+ background-color: $cc-scitem-selectedColor;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>CodeCreative SC Item Section Navigator</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+	data.catItemId = $sp.getParameter('sys_id');
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-29 19:33:34</sys_created_on>
+        <sys_id>8efbb39b87830110a937fcc7cebb35c5</sys_id>
+        <sys_mod_count>101</sys_mod_count>
+        <sys_name>CodeCreative SC Item Section Navigator</sys_name>
+        <sys_package display_value="CodeCreative Catalog Experience" source="x_0505_cc_sc_tools">4a3af75787830110a937fcc7cebb3581</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeCreative Catalog Experience">4a3af75787830110a937fcc7cebb3581</sys_scope>
+        <sys_update_name>sp_widget_8efbb39b87830110a937fcc7cebb35c5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-05-03 16:40:24</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="h2 m-t-none m-b-sm font-thin">${Form Sections}</h2>
+  </div>
+  <div class="panel-body">
+    <ul ng-if="c.nav.getState() == 'Loaded'">
+      <li class="cc-section" ng-repeat="section in c.nav.getSections()" ng-class="{'cc-selected': section.isSelected, 'cc-last': $last }">
+        <a href ng-click="c.nav.selectSection(section)">
+        	<span class="cc-scitem-section-step-number"><span>{{ $index + 1 }}</span></span>{{section.label}}
+        </a>
+      </li>
+      <li class="cc-scitem-section-showall">
+        <a href ng-click="c.nav.showAll()">${Show all}</a>
+      </li>
+    </ul>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

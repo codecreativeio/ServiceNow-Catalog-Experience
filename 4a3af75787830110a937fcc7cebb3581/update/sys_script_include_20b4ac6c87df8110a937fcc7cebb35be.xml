@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_0505_cc_sc_tools.getDefinedSectionsForItem</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Retrieves a list of Sections defined explicitly as a related list to a Catalog Item</description>
+        <name>getDefinedSectionsForItem</name>
+        <script><![CDATA[var getDefinedSectionsForItem = function(itemId) {
+	var results = [];
+	var containerMap = {};
+	var containers = [];
+	var multirows = [];
+	var result;
+	
+	function appendContainers(ids) {
+		var container = new GlideRecord('item_option_new');
+		container.addQuery('sys_id', 'IN', ids.join(','));
+		container.query();
+		while (container.next()) {
+			containerMap[container.sys_id.toString()].containers.push(container.name.toString());
+		}
+	}
+	
+	function appendMultirows(ids) {
+		var multirow = new GlideRecord('item_option_new_set');
+		multirow.addQuery('sys_id', 'IN', ids.join(','));
+		multirow.query();
+		while (multirow.next()) {
+			containerMap[multirow.sys_id.toString()].containers.push(multirow.internal_name.toString());
+		}
+	}
+	
+	var section = new GlideRecord('x_0505_cc_sc_tools_section');
+	section.addQuery('catalog_item', itemId);
+	section.orderBy('order');
+	section.query();
+	while (section.next()) {
+		result = {
+			'label': section.name.toString(),
+			'key': section.sys_id.toString(),
+			'order': section.order.toString(),
+			'sys_id': section.sys_id.toString(),
+			'containers': []
+		};
+		results.push(result);
+		
+		section.include_containers.toString().split(',').forEach(function(containerId) {
+			containerMap[containerId] = result;
+			containers.push(containerId);
+		});
+		
+		section.include_multirow_set.toString().split(',').forEach(function(multirowId) {
+			containerMap[multirowId] = result;
+			multirows.push(multirowId);
+		});
+	}
+	
+	if (results.length > 0) {
+		appendContainers(containers);
+		appendMultirows(multirows);
+		return results;
+	}
+	else {
+		return;
+	}
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-05-03 01:24:23</sys_created_on>
+        <sys_id>20b4ac6c87df8110a937fcc7cebb35be</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>getDefinedSectionsForItem</sys_name>
+        <sys_package display_value="CodeCreative Catalog Experience" source="x_0505_cc_sc_tools">4a3af75787830110a937fcc7cebb3581</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CodeCreative Catalog Experience">4a3af75787830110a937fcc7cebb3581</sys_scope>
+        <sys_update_name>sys_script_include_20b4ac6c87df8110a937fcc7cebb35be</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-05-03 01:31:53</sys_updated_on>
+    </sys_script_include>
+</record_update>

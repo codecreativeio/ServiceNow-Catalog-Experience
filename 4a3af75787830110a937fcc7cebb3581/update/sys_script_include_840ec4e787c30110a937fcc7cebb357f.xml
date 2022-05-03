@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_0505_cc_sc_tools.getContainersForItem</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Retrieves a list of Container Start variables that are related directly or through a variable set to a Catalog Item</description>
+        <name>getContainersForItem</name>
+        <script><![CDATA[var getContainersForItem = function(itemId, variableSetIds) {
+    var result = [];
+
+    var gr = new GlideRecord('item_option_new');
+    gr.addQuery('active', true);
+    gr.addQuery('type', 19); // Type is Container Start
+    var itemCond = gr.addQuery('cat_item', itemId);
+    itemCond.addOrCondition('variable_set', 'IN', variableSetIds.join(','));
+    gr.orderBy('order');
+    gr.query();
+
+    while (gr.next()) {
+        if (gr.variable_set.nil()) {
+            result.push({
+                'label': gr.question_text.toString(),
+                'key': gr.name.toString(),
+                'order': gr.getValue('order') * 1,
+				'sys_id': gr.sys_id.toString()
+            });
+        }
+        else {
+            result.push({
+                'label': gr.question_text.toString(),
+                'key': gr.name.toString(),
+				'order': gr.getValue('variable_set.order') * 1,
+                'setOrder': gr.getValue('order') * 1,
+				'variable_set': gr.variable_set.sys_id.toString(),
+				'sys_id': gr.sys_id.toString()
+            });
+        }
+    }
+    
+    return result;
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-29 20:52:28</sys_created_on>
+        <sys_id>840ec4e787c30110a937fcc7cebb357f</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>getContainersForItem</sys_name>
+        <sys_package display_value="CodeCreative Catalog Experience" source="x_0505_cc_sc_tools">4a3af75787830110a937fcc7cebb3581</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CodeCreative Catalog Experience">4a3af75787830110a937fcc7cebb3581</sys_scope>
+        <sys_update_name>sys_script_include_840ec4e787c30110a937fcc7cebb357f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-30 02:19:49</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_definition">
+    <sys_ws_definition action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <base_uri>/api/x_0505_cc_sc_tools/codecreative_catalog_toolkit</base_uri>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_version>No active default version</default_version>
+        <doc_link/>
+        <enforce_acl>d300986b87c30110a937fcc7cebb353e</enforce_acl>
+        <is_versioned>false</is_versioned>
+        <name>CodeCreative Catalog Toolkit</name>
+        <namespace>x_0505_cc_sc_tools</namespace>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <service_id>codecreative_catalog_toolkit</service_id>
+        <short_description/>
+        <sys_class_name>sys_ws_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-29 20:59:06</sys_created_on>
+        <sys_id>1aaf446b87c30110a937fcc7cebb3505</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>CodeCreative Catalog Toolkit</sys_name>
+        <sys_package display_value="CodeCreative Catalog Experience" source="x_0505_cc_sc_tools">4a3af75787830110a937fcc7cebb3581</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CodeCreative Catalog Experience">4a3af75787830110a937fcc7cebb3581</sys_scope>
+        <sys_update_name>sys_ws_definition_1aaf446b87c30110a937fcc7cebb3505</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-29 21:02:24</sys_updated_on>
+    </sys_ws_definition>
+</record_update>

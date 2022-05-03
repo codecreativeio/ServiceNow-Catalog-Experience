@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="catalog_item" label="Catalog Item" language="en" table="x_0505_cc_sc_tools_section">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>catalog_item</element>
+            <help/>
+            <hint/>
+            <label>Catalog Item</label>
+            <language>en</language>
+            <name>x_0505_cc_sc_tools_section</name>
+            <plural>Catalog Items</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-04-30 02:11:38</sys_created_on>
+            <sys_id>c857592f87870110a937fcc7cebb358e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Catalog Item</sys_name>
+            <sys_package display_value="CodeCreative Catalog Experience" source="x_0505_cc_sc_tools">4a3af75787830110a937fcc7cebb3581</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="CodeCreative Catalog Experience">4a3af75787830110a937fcc7cebb3581</sys_scope>
+            <sys_update_name>sys_documentation_x_0505_cc_sc_tools_section_catalog_item_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-04-30 02:11:38</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

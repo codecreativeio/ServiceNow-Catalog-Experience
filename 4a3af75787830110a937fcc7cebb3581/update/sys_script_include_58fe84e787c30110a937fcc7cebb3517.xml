@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_0505_cc_sc_tools.getInferredSectionsForItem</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Retrieves a list of Container Start variables and MultiRow Variable sets that are associated with a Catalog Item to expose a list of sections that can be navigated using g_form.setVisible</description>
+        <name>getInferredSectionsForItem</name>
+        <script><![CDATA[var getInferredSectionsForItem = function(itemId) {
+    var variableSets = getVariableSetsForItem(itemId);
+    var containers = getContainersForItem(itemId, variableSets.singlerow);
+	
+    var sections = containers.concat(variableSets.multirow);
+	
+	sections.forEach(function(section) {
+		if (section.variable_set) {
+			section.order = variableSets.singlerowOrder[section.variable_set];
+		}
+	});
+
+    sections.sort(function(a, b) {
+        if (a.order == b.order && a.setOrder != undefined && b.setOrder != undefined) {
+			return a.setOrder - b.setOrder;
+		}
+		else {
+			return a.order - b.order;
+		}
+    });
+
+    return sections;
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-29 20:55:47</sys_created_on>
+        <sys_id>58fe84e787c30110a937fcc7cebb3517</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>getInferredSectionsForItem</sys_name>
+        <sys_package display_value="CodeCreative Catalog Experience" source="x_0505_cc_sc_tools">4a3af75787830110a937fcc7cebb3581</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CodeCreative Catalog Experience">4a3af75787830110a937fcc7cebb3581</sys_scope>
+        <sys_update_name>sys_script_include_58fe84e787c30110a937fcc7cebb3517</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-05-03 01:03:03</sys_updated_on>
+    </sys_script_include>
+</record_update>

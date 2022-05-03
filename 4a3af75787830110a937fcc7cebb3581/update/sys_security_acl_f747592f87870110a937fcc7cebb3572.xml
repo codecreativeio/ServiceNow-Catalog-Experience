@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>true</advanced>
+        <condition/>
+        <description>Default access control on x_0505_cc_sc_tools_section</description>
+        <name>x_0505_cc_sc_tools_section</name>
+        <operation display_value="read">read</operation>
+        <script><![CDATA[var answer = gs.hasRole('snc_internal') || gs.hasRole('snc_external');]]></script>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-30 02:11:38</sys_created_on>
+        <sys_id>f747592f87870110a937fcc7cebb3572</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>x_0505_cc_sc_tools_section</sys_name>
+        <sys_package display_value="CodeCreative Catalog Experience" source="x_0505_cc_sc_tools">4a3af75787830110a937fcc7cebb3581</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeCreative Catalog Experience">4a3af75787830110a937fcc7cebb3581</sys_scope>
+        <sys_update_name>sys_security_acl_f747592f87870110a937fcc7cebb3572</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-30 02:23:09</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+</record_update>
