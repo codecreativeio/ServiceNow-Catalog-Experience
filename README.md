@@ -21,3 +21,9 @@ A common issue with container based multi-page Catalog solutions is that Catalog
 #### Bring Your Own Widget
 
 The logic for this solution is almost entirely contained in the `CatalogItemNavigator` Angular Provider. This standard API means you can bring your own widget to the party without having to clone, copy, and manage the container logic.  Don't like the look and feel provided in the reference implementation?  Go crazy building your own on top of the shared API service.
+
+### Disadvantages
+
+#### Non-Standard Methods
+
+This solution, like most multi-page Catalog Item solutions, requires the use of non-standard API calls. In particular, this method hooks into the g_form events in Service Portal to get access to the g_form instance variable and also uses a g_form hack by accessing the field's \_isVisible internal property to bypass the variable mandatory checks when hiding containers.  It's worth noting that most solutions require access to more non-standard features than this solution.
