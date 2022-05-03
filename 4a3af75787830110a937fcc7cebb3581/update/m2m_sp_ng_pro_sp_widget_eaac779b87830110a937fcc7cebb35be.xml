@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget">
+    <m2m_sp_ng_pro_sp_widget action="INSERT_OR_UPDATE">
+        <sp_angular_provider display_value="CatalogItemNavigator">d45a335b87830110a937fcc7cebb3581</sp_angular_provider>
+        <sp_widget display_value="CodeCreative SC Item Pagination Buttons">764c335b87830110a937fcc7cebb3597</sp_widget>
+        <sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-29 19:35:36</sys_created_on>
+        <sys_id>eaac779b87830110a937fcc7cebb35be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CatalogItemNavigator.CodeCreative SC Item Pagination Buttons</sys_name>
+        <sys_package display_value="CodeCreative Catalog Experience" source="x_0505_cc_sc_tools">4a3af75787830110a937fcc7cebb3581</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeCreative Catalog Experience">4a3af75787830110a937fcc7cebb3581</sys_scope>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_eaac779b87830110a937fcc7cebb35be</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-29 19:35:36</sys_updated_on>
+    </m2m_sp_ng_pro_sp_widget>
+</record_update>

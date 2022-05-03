@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>true</advanced>
+        <condition/>
+        <description/>
+        <name>CodeCreative Catalog Toolkit</name>
+        <operation display_value="execute">execute</operation>
+        <script><![CDATA[answer = gs.hasRole('snc_internal') || gs.hasRole('snc_external');]]></script>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-29 21:02:18</sys_created_on>
+        <sys_id>d300986b87c30110a937fcc7cebb353e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CodeCreative Catalog Toolkit</sys_name>
+        <sys_package display_value="CodeCreative Catalog Experience" source="x_0505_cc_sc_tools">4a3af75787830110a937fcc7cebb3581</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeCreative Catalog Experience">4a3af75787830110a937fcc7cebb3581</sys_scope>
+        <sys_update_name>sys_security_acl_d300986b87c30110a937fcc7cebb353e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-29 21:02:18</sys_updated_on>
+        <type display_value="REST_Endpoint">REST_Endpoint</type>
+    </sys_security_acl>
+</record_update>

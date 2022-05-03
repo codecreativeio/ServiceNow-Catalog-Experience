@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($rootScope, CatalogItemNavigator) {
+  /* widget controller */
+  var c = this;
+	
+	c.nav = CatalogItemNavigator;
+	
+	$rootScope.$on('spModel.gForm.initialized', function(e, gFormInstance) {
+		CatalogItemNavigator.load(c.data.catItemId, gFormInstance);
+	});
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.cc-sc-paging-btn-container {
+	display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>CodeCreative SC Item Pagination Buttons</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-29 19:35:22</sys_created_on>
+        <sys_id>764c335b87830110a937fcc7cebb3597</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>CodeCreative SC Item Pagination Buttons</sys_name>
+        <sys_package display_value="CodeCreative Catalog Experience" source="x_0505_cc_sc_tools">4a3af75787830110a937fcc7cebb3581</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeCreative Catalog Experience">4a3af75787830110a937fcc7cebb3581</sys_scope>
+        <sys_update_name>sp_widget_764c335b87830110a937fcc7cebb3597</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-05-03 15:47:05</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-default">
+  <div class="panel-body cc-sc-paging-btn-container" ng-if="c.nav.getState() == 'Loaded'">
+    <a href class="btn btn-default" ng-click="c.nav.previous()" ng-disabled="!c.nav.hasPrevious()">Previous</a>
+    
+    <a href class="btn btn-default" ng-click="c.nav.next()" ng-if="c.nav.hasNext()">${Next}</a>
+    
+    <a href class="btn btn-primary" ng-click="c.nav.submit()" ng-disabled="" ng-if="!c.nav.hasNext()">${Submit}</a>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

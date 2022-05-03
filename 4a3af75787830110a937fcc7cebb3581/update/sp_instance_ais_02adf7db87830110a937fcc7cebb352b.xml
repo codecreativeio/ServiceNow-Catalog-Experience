@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_ais">
+    <sp_instance_ais action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <ai_search_source_filter display_value="Service Portal Catalogs">e1f88209772300102d71af6168106172</ai_search_source_filter>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <disable_all_suggestions>false</disable_all_suggestions>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <placeholder/>
+        <roles/>
+        <search_application/>
+        <search_results_configuration/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">8eadf7db87830110a937fcc7cebb3528</sp_column>
+        <sp_widget display_value="Typeahead Search">fa20ec02cb31020000f8d856634c9ce9</sp_widget>
+        <sys_class_name>sp_instance_ais</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-29 19:39:56</sys_created_on>
+        <sys_id>02adf7db87830110a937fcc7cebb352b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="CodeCreative Catalog Experience" source="x_0505_cc_sc_tools">4a3af75787830110a937fcc7cebb3581</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CodeCreative Catalog Experience">4a3af75787830110a937fcc7cebb3581</sys_scope>
+        <sys_update_name>sp_instance_ais_02adf7db87830110a937fcc7cebb352b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-29 19:39:56</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"title": {
+		"value": "",
+		"displayValue": ""
+	},
+	"color": {
+		"value": "",
+		"displayValue": ""
+	},
+	"glyph": {
+		"value": "",
+		"displayValue": ""
+	},
+	"size": {
+		"value": "",
+		"displayValue": ""
+	},
+	"limit": {
+		"value": null,
+		"displayValue": ""
+	},
+	"contextual_search_sources": {
+		"value": "c96eb1686721220023c82e08f585efff",
+		"displayValue": "Service Catalog"
+	}
+}]]></widget_parameters>
+    </sp_instance_ais>
+    <sys_translated_text action="delete_multiple" query="documentkey=02adf7db87830110a937fcc7cebb352b"/>
+</record_update>

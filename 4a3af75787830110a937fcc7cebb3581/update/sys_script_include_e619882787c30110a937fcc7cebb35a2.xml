@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_0505_cc_sc_tools.getVariableSetsForItem</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Retrieves a list of variable sets that are related to a catalog item and differentiates them as either Single Row or Multi Row sets</description>
+        <name>getVariableSetsForItem</name>
+        <script><![CDATA[var getVariableSetsForItem = function(itemId) {
+    var result = {
+        'singlerow': [],
+        'multirow': [],
+		'singlerowOrder': {}
+    };
+
+    var gr = new GlideRecord('io_set_item');
+    gr.addQuery('sc_cat_item', itemId);
+    gr.orderBy('order');
+    gr.query();
+    while (gr.next()) {		
+        if (gr.variable_set.type.toString() == 'one_to_one') {
+            result.singlerow.push(gr.variable_set.sys_id.toString());
+			result.singlerowOrder[gr.variable_set.sys_id.toString()] = gr.order * 1;
+        }
+        else if (gr.variable_set.type.toString() == 'one_to_many') {
+            result.multirow.push({
+                'label': gr.variable_set.title.toString(),
+                'key': gr.variable_set.internal_name.toString(),
+                'order': gr.variable_set.order * 1,
+				'sys_id': gr.variable_set.sys_id.toString()
+            });
+        }
+        else {
+            throw new Error('Unrecognized type error in getVariableSetsForItem');
+        }
+    }
+
+    return result;
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-29 20:31:13</sys_created_on>
+        <sys_id>e619882787c30110a937fcc7cebb35a2</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>getVariableSetsForItem</sys_name>
+        <sys_package display_value="CodeCreative Catalog Experience" source="x_0505_cc_sc_tools">4a3af75787830110a937fcc7cebb3581</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CodeCreative Catalog Experience">4a3af75787830110a937fcc7cebb3581</sys_scope>
+        <sys_update_name>sys_script_include_e619882787c30110a937fcc7cebb35a2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-30 02:16:11</sys_updated_on>
+    </sys_script_include>
+</record_update>
