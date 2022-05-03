@@ -1,7 +1,6 @@
 # ServiceNow-Catalog-Experience
 A collection of Service Portal Widgets to enhance the ServiceNow Catalog Experience
 
-
 ## Muli-Page Catalog Item
 
 🟡 Warning: Use at your own risk. This feature uses a Service Portal specific g_form hack to circumvent mandatory variables and therefore may pose risk for future upgrades. If you are intent on a multi-page catalog item solution, this one is fairly low risk compared to other mainstream solutions.
@@ -27,3 +26,10 @@ The logic for this solution is almost entirely contained in the `CatalogItemNavi
 #### Non-Standard Methods
 
 This solution, like most multi-page Catalog Item solutions, requires the use of non-standard API calls. In particular, this method hooks into the g_form events in Service Portal to get access to the g_form instance variable and also uses a g_form hack by accessing the field's \_isVisible internal property to bypass the variable mandatory checks when hiding containers.  It's worth noting that most solutions require access to more non-standard features than this solution.
+
+## Installation
+
+1. Download the Update Set XML from Releases
+2. Upload the Update Set XML to your Instance
+3. Commit the Update Set to install the application
+4. You can add a Page Route map or use any technique desired to direct Catalog Items to the `cc_cat_item` Service Portal page or create your own widgets and pages to customize to your needs
