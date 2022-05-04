@@ -5,6 +5,8 @@ A collection of Service Portal Widgets to enhance the ServiceNow Catalog Experie
 
 🟡 Warning: Use at your own risk. This feature uses a Service Portal specific g_form hack to circumvent mandatory variables and therefore may pose risk for future upgrades. If you are intent on a multi-page catalog item solution, this one is fairly low risk compared to other mainstream solutions.
 
+[![Multi-Page Catalog Item Video](http://img.youtube.com/vi/F3gYalVybbM/0.jpg)](http://www.youtube.com/watch?v=F3gYalVybbM "Multi-Page Catalog Item")
+
 A common requirement for Service Catalog is the ability to support multi-step or multi-page Catalog Items.  The proposed solution typically involves recommending Order Guides (less than ideal portal implementation), cloning the Catalog Form widget (a moderate to high risk idea), or one of many solutions that nest the Catalog Form Widget which typically has a large, risky code base.  This specific implementation achieves the same multi-page experience via Catalog Item containers with a number of advantages over other typical solutions:
 
 ### Advantages
