@@ -14,16 +14,16 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>84c6512f87870110a937fcc7cebb3597</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>CodeCreative Catalog Tools</sys_name>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>CodeCreative Catalog Experience</sys_name>
         <sys_overrides/>
         <sys_package display_value="CodeCreative Catalog Experience" source="x_0505_cc_sc_tools">4a3af75787830110a937fcc7cebb3581</sys_package>
         <sys_policy/>
         <sys_scope display_value="CodeCreative Catalog Experience">4a3af75787830110a937fcc7cebb3581</sys_scope>
         <sys_update_name>sys_app_application_84c6512f87870110a937fcc7cebb3597</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2022-04-30 02:09:39</sys_updated_on>
-        <title>CodeCreative Catalog Tools</title>
+        <sys_updated_on>2022-05-07 20:46:27</sys_updated_on>
+        <title>CodeCreative Catalog Experience</title>
         <view_name/>
     </sys_app_application>
 </record_update>

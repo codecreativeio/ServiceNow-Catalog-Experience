@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
     <sys_app_module action="INSERT_OR_UPDATE">
         <active>true</active>
-        <application display_value="CodeCreative Catalog Tools">84c6512f87870110a937fcc7cebb3597</application>
+        <application display_value="CodeCreative Catalog Experience">84c6512f87870110a937fcc7cebb3597</application>
         <assessment/>
         <device_type/>
         <filter table="sp_angular_provider">sys_scope=4a3af75787830110a937fcc7cebb3581^EQ<item display_table="sys_scope" display_value="CodeCreative Catalog Experience" endquery="false" field="sys_scope" goto="false" newquery="false" operator="=" or="false" value="4a3af75787830110a937fcc7cebb3581"/>

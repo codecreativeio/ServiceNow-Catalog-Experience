@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Section" max_length="40" name="x_0505_cc_sc_tools_section" sizeclass="3" type="collection">
+    <element label="Section" max_length="40" name="x_0505_cc_sc_tools_section" sizeclass="4" type="collection">
         <element label="Catalog Item" max_length="32" name="catalog_item" read_only="true" reference="sc_cat_item" type="reference"/>
         <element label="Include Containers" max_length="4000" name="include_containers" reference="item_option_new" reference_qual="javascript: 'sys_idIN' + getInferredSectionsForItem(current.catalog_item.toString()).map(function(item) { return item.sys_id })" type="glide_list" use_reference_qualifier="advanced"/>
         <element label="Include MultiRow Set" max_length="4000" name="include_multirow_set" reference="item_option_new_set" reference_qual="javascript: 'sys_idIN' + getVariableSetsForItem(current.catalog_item.toString()).multirow.map(function(item) { return item.sys_id })" type="glide_list" use_reference_qualifier="advanced"/>
